@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Page principale -->
+    <url>
+        <loc>https://TON-USERNAME.github.io/TON-REPO/</loc>
+        <lastmod>2026-02-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- Section Partenariats -->
+    <url>
+        <loc>https://TON-USERNAME.github.io/TON-REPO/#partnerships</loc>
+        <lastmod>2026-02-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Section LAMAstream -->
+    <url>
+        <loc>https://TON-USERNAME.github.io/TON-REPO/#llamahub</loc>
+        <lastmod>2026-02-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Section Blog -->
+    <url>
+        <loc>https://TON-USERNAME.github.io/TON-REPO/#blog</loc>
+        <lastmod>2026-02-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- Section Foi -->
+    <url>
+        <loc>https://TON-USERNAME.github.io/TON-REPO/#faith</loc>
+        <lastmod>2026-02-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>

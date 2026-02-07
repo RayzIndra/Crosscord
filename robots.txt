@@ -1,0 +1,11 @@
+# robots.txt pour ✟cord
+# Permet à tous les moteurs de recherche d'indexer le site
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://TON-USERNAME.github.io/TON-REPO/sitemap.xml
+
+# Crawl-delay (optionnel)
+Crawl-delay: 5

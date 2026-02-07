@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✟cord - Communauté Chrétienne Discord | Partenariats & Foi</title>
+    <meta name="description" content="✟cord - Serveur Discord chrétien accueillant. Partenariats vérifiés avec Rayz et LAMAstream. Ouvert à tous, croyants et non-croyants. Rejoignez notre communauté bienveillante.">
+    <meta name="keywords" content="discord chrétien, communauté chrétienne, foi, spiritualité, partenariat discord, LAMAstream, Rayz, serveur discord">
+    <meta name="author" content="✟cord Team">
+    <meta property="og:title" content="✟cord - Communauté Chrétienne Discord">
+    <meta property="og:description" content="Serveur Discord chrétien ouvert à tous. Partenariats vérifiés, discussions de foi et communauté bienveillante.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #000000;
+            --secondary: #1a1a1a;
+            --accent: #333333;
+            --light-gray: #666666;
+            --medium-gray: #999999;
+            --bg-dark: #0a0a0a;
+            --bg-darker: #050505;
+            --text-primary: #FFFFFF;
+            --text-secondary: #CCCCCC;
+            --text-muted: #999999;
+            --highlight: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-darker);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Background Animation */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.08;
+        }
+
+        .bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, var(--highlight) 0%, transparent 70%);
+            filter: blur(80px);
+            animation: float 25s infinite ease-in-out;
+        }
+
+        .bg-circle:nth-child(1) {
+            width: 500px;
+            height: 500px;
+            top: -15%;
+            left: -15%;
+            animation-delay: 0s;
+        }
+
+        .bg-circle:nth-child(2) {
+            width: 400px;
+            height: 400px;
+            bottom: -15%;
+            right: -15%;
+            animation-delay: 8s;
+        }
+
+        .bg-circle:nth-child(3) {
+            width: 350px;
+            height: 350px;
+            top: 50%;
+            left: 50%;
+            animation-delay: 16s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(40px, -40px) scale(1.05); }
+            66% { transform: translate(-25px, 25px) scale(0.95); }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        main {
+            position: relative;
+            z-index: 1;
+            padding-top: 80px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 5rem 0;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        section:nth-child(1) { animation-delay: 0.1s; }
+        section:nth-child(2) { animation-delay: 0.2s; }
+        section:nth-child(3) { animation-delay: 0.3s; }
+        section:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1, h2 {
+            font-family: 'Syne', sans-serif;
+            font-weight: 800;
+        }
+
+        h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--text-primary), var(--medium-gray));
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .btn-primary:hover {
+            background: var(--text-secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--text-primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .stat-card {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--text-primary);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+        }
+
+        .stat-number {
+            font-family: 'Syne', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
+        /* Partnership Section */
+        .partnership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .partner-card {
+            background: var(--secondary);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--text-primary), var(--text-secondary));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .partner-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--text-primary);
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.15);
+        }
+
+        .partner-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--text-primary), var(--text-secondary));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .partner-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .partner-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* LLaMaHUB Integration */
+        .llamahub-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 1rem;
+            align-items: start;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--text-primary);
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .feature-text h4 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-text p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Blog Section */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .blog-card {
+            background: var(--secondary);
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(255, 255, 255, 0.1);
+            border-color: var(--text-primary);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .blog-card h3 {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+
+        .blog-card p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .read-more {
+            color: var(--text-primary);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+            border-bottom: 1px solid var(--text-primary);
+        }
+
+        .read-more:hover {
+            gap: 1rem;
+        }
+
+        /* Form */
+        .partnership-form {
+            background: var(--secondary);
+            padding: 3rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            background: var(--accent);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--text-primary);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 3rem 0 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            nav ul { display: none; }
+            .stats { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-animation">
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+        <div class="bg-circle"></div>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div class="logo">✟cord</div>
+            <ul>
+                <li><a href="#hero">Accueil</a></li>
+                <li><a href="#partnerships">Partenariats</a></li>
+                <li><a href="#llamahub">LAMAstream</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#faith">Notre Foi</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>✟cord - Communauté Chrétienne</h1>
+                    <p class="subtitle">
+                        Un espace bienveillant où partager la foi, échanger et grandir ensemble. 
+                        Partenariats vérifiés avec Rayz et LAMAstream. <br><br>
+                        <strong>🤝 Tous sont les bienvenus :</strong> Que tu sois chrétien, athée, ou d'une autre religion, 
+                        tu es accueilli avec respect et ouverture. Notre communauté célèbre la diversité 
+                        et l'échange dans le respect mutuel.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#" class="btn btn-primary">Rejoindre ✟cord</a>
+                        <a href="#partnerships" class="btn btn-secondary">Nos Partenaires</a>
+                    </div>
+
+                    <div class="stats">
+                        <div class="stat-card">
+                            <div class="stat-number">1.8K+</div>
+                            <div class="stat-label">Membres actifs</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">30+</div>
+                            <div class="stat-label">Partenaires</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Communauté</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="partnerships">
+            <div class="container">
+                <h2>Nos Partenariats</h2>
+                <div class="partnership-grid">
+                    <div class="partner-card">
+                        <div class="partner-icon">✟</div>
+                        <h3>LAMAstream</h3>
+                        <p>Partenariat officiel avec <a href="https://rayzindra.github.io/LAMAstream/" target="_blank" style="color: var(--text-primary); text-decoration: underline;">LAMAstream</a> pour des fonctionnalités AI avancées et streaming de qualité.</p>
+                        <span class="status-badge">✓ Partenaire Officiel</span>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-icon">🔍</div>
+                        <h3>Vérification Rayz</h3>
+                        <p>Tous nos partenariats sont vérifiés avec le système Rayz pour garantir l'authenticité et la qualité de nos collaborations.</p>
+                        <span class="status-badge">✓ Vérifié</span>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-icon">🤝</div>
+                        <h3>Serveurs Chrétiens</h3>
+                        <p>Réseau de serveurs chrétiens partenaires pour échanger, prier ensemble et grandir dans la foi.</p>
+                        <span class="status-badge">✓ Actif</span>
+                    </div>
+
+                    <div class="partner-card">
+                        <div class="partner-icon">🌟</div>
+                        <h3>Avantages Membres</h3>
+                        <p>Accès à des rôles exclusifs, études bibliques, événements communautaires et ressources spirituelles.</p>
+                        <span class="status-badge">✓ Premium</span>
+                    </div>
+                </div>
+
+                <div class="partnership-form">
+                    <h3 style="font-family: 'Syne', sans-serif; font-size: 2rem; margin-bottom: 2rem;">Demande de partenariat</h3>
+                    <form id="partnershipForm">
+                        <div class="form-group">
+                            <label for="serverName">Nom du serveur *</label>
+                            <input type="text" id="serverName" required placeholder="Mon serveur">
+                        </div>
+                        <div class="form-group">
+                            <label for="serverMembers">Nombre de membres *</label>
+                            <select id="serverMembers" required>
+                                <option value="">Sélectionner...</option>
+                                <option value="50-200">50 - 200 membres</option>
+                                <option value="200-500">200 - 500 membres</option>
+                                <option value="500-1000">500 - 1000 membres</option>
+                                <option value="1000-5000">1000 - 5000 membres</option>
+                                <option value="5000+">5000+ membres</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="serverInvite">Lien d'invitation Discord *</label>
+                            <input type="url" id="serverInvite" required placeholder="https://discord.gg/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description de votre serveur *</label>
+                            <textarea id="description" required placeholder="Parlez-nous de votre communauté, vos valeurs, vos objectifs..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact">Contact (Discord ou Email) *</label>
+                            <input type="text" id="contact" required placeholder="username#0000 ou email@exemple.com">
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="llamahub">
+            <div class="container">
+                <h2>LAMAstream Integration</h2>
+                <div class="llamahub-section">
+                    <p style="color: var(--text-secondary); font-size: 1.2rem; margin-bottom: 2rem;">
+                        En partenariat avec <a href="https://rayzindra.github.io/LAMAstream/" target="_blank" style="color: var(--text-primary); text-decoration: underline;">LAMAstream</a> 
+                        et propulsé par Rayz, notre serveur bénéficie de fonctionnalités AI avancées 
+                        et d'outils de streaming de qualité professionnelle.
+                    </p>
+                    
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🎥</div>
+                            <div class="feature-text">
+                                <h4>Streaming qualité</h4>
+                                <p>Diffusez vos cultes, études bibliques et événements en direct</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🤖</div>
+                            <div class="feature-text">
+                                <h4>Assistant biblique AI</h4>
+                                <p>Aide à la recherche de versets et réponses aux questions théologiques</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💬</div>
+                            <div class="feature-text">
+                                <h4>Modération intelligente</h4>
+                                <p>Protection de la communauté avec filtrage contextuel</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <div class="feature-text">
+                                <h4>Automatisation</h4>
+                                <p>Gestion automatique des événements et rappels de prière</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📊</div>
+                            <div class="feature-text">
+                                <h4>Statistiques</h4>
+                                <p>Suivi de l'engagement et de la croissance de la communauté</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <div class="feature-text">
+                                <h4>Sécurité renforcée</h4>
+                                <p>Protection contre le spam et les contenus inappropriés</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem; text-align: center;">
+                        <a href="https://rayzindra.github.io/LAMAstream/" target="_blank" class="btn btn-primary">Découvrir LAMAstream</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog">
+            <div class="container">
+                <h2>Derniers articles</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">✟</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>5 février 2026</span>
+                                <span>•</span>
+                                <span>Foi</span>
+                            </div>
+                            <h3>Partenariat avec LAMAstream</h3>
+                            <p>Découvrez notre nouveau partenariat officiel avec LAMAstream et comment il enrichit notre expérience communautaire avec des outils de streaming et AI avancés.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">🙏</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>1 février 2026</span>
+                                <span>•</span>
+                                <span>Communauté</span>
+                            </div>
+                            <h3>L'ouverture : notre force</h3>
+                            <p>Chrétiens, athées, autres religions : tous sont les bienvenus. Découvrez pourquoi la diversité enrichit notre communauté et nos échanges spirituels.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+
+                    <div class="blog-card">
+                        <div class="blog-image">📖</div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span>28 janvier 2026</span>
+                                <span>•</span>
+                                <span>Étude Biblique</span>
+                            </div>
+                            <h3>Nouvelle série d'études bibliques</h3>
+                            <p>Rejoignez notre série hebdomadaire d'études bibliques en live stream. Échanges, questions et approfondissement dans un cadre bienveillant.</p>
+                            <a href="#" class="read-more">Lire la suite →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faith">
+            <div class="container">
+                <h2>Notre Foi & Valeurs</h2>
+                <div class="llamahub-section">
+                    <div style="max-width: 800px; margin: 0 auto;">
+                        <h3 style="font-family: 'Syne', sans-serif; font-size: 1.8rem; margin-bottom: 2rem; text-align: center;">
+                            ✟ Une communauté ouverte à tous
+                        </h3>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
+                            <strong>✟cord</strong> est avant tout une communauté chrétienne où nous partageons notre foi, 
+                            étudions la Bible et grandissons spirituellement ensemble. Nous croyons en l'amour du Christ 
+                            et cherchons à vivre selon ses enseignements.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem; line-height: 1.8;">
+                            <strong>🤝 Cependant, nous sommes ouverts à tous.</strong> Que vous soyez athée, agnostique, 
+                            musulman, juif, bouddhiste ou d'une autre conviction, vous êtes le bienvenu parmi nous. 
+                            Nous valorisons le respect mutuel, le dialogue constructif et l'enrichissement par la diversité.
+                        </p>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 3rem; line-height: 1.8;">
+                            Notre communauté est un espace sûr où chacun peut poser des questions, partager ses doutes, 
+                            discuter de spiritualité ou simplement apprécier la compagnie de personnes bienveillantes. 
+                            Pas de jugement, pas de pression — juste de l'authenticité et du respect.
+                        </p>
+                        
+                        <div style="background: var(--accent); padding: 2rem; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 2rem;">
+                            <h4 style="font-family: 'Syne', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; text-align: center;">
+                                Nos Valeurs Fondamentales
+                            </h4>
+                            <ul style="color: var(--text-secondary); font-size: 1rem; line-height: 2; list-style-position: inside;">
+                                <li><strong>Amour & Compassion</strong> - Traiter chacun avec gentillesse</li>
+                                <li><strong>Respect</strong> - Honorer toutes les croyances et perspectives</li>
+                                <li><strong>Authenticité</strong> - Être vrai dans nos échanges</li>
+                                <li><strong>Inclusion</strong> - Accueillir la diversité</li>
+                                <li><strong>Croissance</strong> - Grandir ensemble spirituellement et humainement</li>
+                            </ul>
+                        </div>
+
+                        <div style="text-align: center;">
+                            <p style="color: var(--text-muted); font-style: italic; margin-bottom: 2rem;">
+                                « Aimez-vous les uns les autres comme je vous ai aimés. » - Jean 13:34
+                            </p>
+                            <a href="#" class="btn btn-primary">Rejoindre notre communauté</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Nous contacter</a>
+                <a href="https://github.com" target="_blank">GitHub</a>
+                <a href="https://rayzindra.github.io/LAMAstream/" target="_blank">LAMAstream</a>
+            </div>
+            <div class="copyright">
+                © 2026 ✟cord - Communauté Chrétienne Discord. Propulsé par Rayz & LAMAstream. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('partnershipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = {
+                serverName: document.getElementById('serverName').value,
+                serverMembers: document.getElementById('serverMembers').value,
+                serverInvite: document.getElementById('serverInvite').value,
+                description: document.getElementById('description').value,
+                contact: document.getElementById('contact').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Here you would normally send this to a backend or webhook
+            console.log('Partnership request submitted:', formData);
+            
+            // Show success message
+            alert('Merci ! Votre demande de partenariat a été envoyée. Nous vous contacterons bientôt via ' + formData.contact);
+            this.reset();
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add intersection observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
